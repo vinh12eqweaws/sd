@@ -4,6 +4,28 @@ local LocalPlayer = game:GetService("Players").LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
 local CoreGui = LocalPlayer.PlayerGui 
 local function MakeDraggable(topbarobject, object)
+local battat2 = Instance.new("ScreenGui")
+        local battat1 = Instance.new("ImageButton")
+        local battat3 = Instance.new("UICorner")
+        battat2.Name = "ToggleUI"
+        battat2.Parent = game.CoreGui
+        battat2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+        battat1.Name = "ToggleButton"
+        battat1.Parent = battat2
+        battat1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        battat1.BorderSizePixel = 0
+        battat1.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+        battat1.Size = UDim2.new(0, 53.5, 0, 53.5)
+        battat1.BackgroundTransparency = 1.000
+        battat1.Image = "rbxassetid://100666805146072"
+        battat1.Draggable = true
+        battat1.MouseButton1Click:Connect(function()
+        game:GetService("VirtualInputManager"):SendKeyEvent(true, "RightShift",false,game)
+        game:GetService("VirtualInputManager"):SendKeyEvent(false, "RightShift",false,game)
+        end)
+        battat3.CornerRadius = UDim.new(0, 15)
+        battat3.Parent = battat1
+
 	local function CustomPos(topbarobject, object)
 		local Dragging = nil
 		local DragInput = nil
@@ -138,27 +160,7 @@ function CircleClick(Button, X, Y)
 		Circle:Destroy()
 	end)
 end
-local battat2 = Instance.new("ScreenGui")
-        local battat1 = Instance.new("ImageButton")
-        local battat3 = Instance.new("UICorner")
-        battat2.Name = "ToggleUI"
-        battat2.Parent = game.CoreGui
-        battat2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-        battat1.Name = "ToggleButton"
-        battat1.Parent = battat2
-        battat1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        battat1.BorderSizePixel = 0
-        battat1.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-        battat1.Size = UDim2.new(0, 53.5, 0, 53.5)
-        battat1.BackgroundTransparency = 1.000
-        battat1.Image = "rbxassetid://100666805146072"
-        battat1.Draggable = true
-        battat1.MouseButton1Click:Connect(function()
-        game:GetService("VirtualInputManager"):SendKeyEvent(true, "RightShift",false,game)
-        game:GetService("VirtualInputManager"):SendKeyEvent(false, "RightShift",false,game)
-        end)
-        battat3.CornerRadius = UDim.new(0, 15)
-        battat3.Parent = battat1
+
 
 local MatsuneLib = {}
 function MatsuneLib:MakeNotify(NotifyConfig)
