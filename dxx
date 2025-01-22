@@ -159,7 +159,7 @@ local battat2 = Instance.new("ScreenGui")
         end)
         battat3.CornerRadius = UDim.new(0, 15)
         battat3.Parent = battat1
-end
+
 local MatsuneLib = {}
 function MatsuneLib:MakeNotify(NotifyConfig)
 	local NotifyConfig = NotifyConfig or {}
